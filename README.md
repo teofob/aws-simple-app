@@ -9,7 +9,7 @@ Data and code comes from:
 
 ## Code to launch when ec2 is established
 
-```
+```bash
 #!/bin/bash
 yum install -y git mysql python3 python3-pip python3-wheel
 
@@ -27,22 +27,19 @@ cd /var/www/python_stuff
 
 git clone --recurse-submodules https://github.com/teofob/aws-simple-app.git
 pip3 install -r aws-simple-app/requirements.txt
+mysql emp < /var/www/python_stuff/aws-simple-app/data/employees.sql
 ```
 
 ## Populate the database
 In RDS the database name should be `emp`.
 
-```
-mysql emp < /var/www/python_stuff/aws-simple-app/data/employees.sql
-```
-
 
 ## To run on each instance
-```
+
+```bash
 cd /var/www/python_stuff/aws-simple-app/python3-mysql-example
 FLASK_APP=app.py python3 -m flask run --host=0.0.0.0 --port=8080
 ```
 
 > **Note**: this architecture will be changed to use tiers and to automatically start the app.
-
 
