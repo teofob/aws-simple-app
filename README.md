@@ -22,12 +22,17 @@ port     = 3306
 EOF
 
 mkdir -p /var/www/python_stuff
-chown -R ec2-user /var/www/python_stuff
 cd /var/www/python_stuff
 
 git clone --recurse-submodules https://github.com/teofob/aws-simple-app.git
-pip3 install -r aws-simple-app/requirements.txt
+cd aws-simple-app
+git checkout master
+pip3 install -r requirements.txt
 mysql emp < /var/www/python_stuff/aws-simple-app/data/employees.sql
+cd python3-mysql-example
+git checkout master
+chown -R ec2-user /var/www/python_stuff
+
 ```
 
 ## Populate the database
