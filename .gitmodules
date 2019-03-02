@@ -1,4 +1,0 @@
-[submodule "python3-mysql-example"]
-	path = python3-mysql-example
-	url = https://github.com/teofob/python3-mysql-example.git
-   branch = master
