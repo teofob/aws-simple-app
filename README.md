@@ -41,8 +41,18 @@ In RDS the database name should be `emp`.
 
 ## To run on each instance
 
+On port 80
+
 ```bash
 cd /var/www/python_stuff/aws-simple-app/python3-mysql-example
+```
+and
+```bash
+bash run.sh
+```
+
+or to run manually:
+```bash
 FLASK_APP=app.py python3 -m flask run --host=0.0.0.0 --port=8080
 ```
 
